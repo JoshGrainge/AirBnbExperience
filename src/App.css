@@ -67,16 +67,26 @@
   color: #747474
 }
 
+.card-list{
+  display: flex;
+  overflow-y: hidden;
+
+  gap: 20px;
+
+  width: 80%;
+  height: 450px;
+  margin: auto;
+}
+
 .card-container{
+  flex: 0 0 auto;
   position: relative;
 
   width: 250px;
-  height: 400px;
+  height: 95%;
   color: #4e4e4e;
 
   font-size: 1.1em;
-
-  margin: 20px;
 }
 
 .thumb{

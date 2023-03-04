@@ -6,9 +6,7 @@ import Card from './components/Card';
 import cardData from './cardData';
 
 function App() {
-  const data = cardData;
-
-  const cards = data.map((d) => (
+  const cards = cardData.map((d) => (
     <Card
       key={d.id}
       title={d.title}
@@ -25,7 +23,7 @@ function App() {
     <div>
       <Nav />
       <Hero />
-      {cards}
+      <div className="card-list">{cards}</div>
     </div>
   );
 }
