@@ -6,8 +6,8 @@ export default function Card({
   image,
   starAvg,
   reviewNum,
-  country,
-  description,
+  location,
+  title,
   price,
   overlayText,
 }) {
@@ -19,9 +19,9 @@ export default function Card({
         <p>{starAvg}</p>
         <p>({reviewNum})</p>
         <p>·</p>
-        <p>{country}</p>
+        <p>{location}</p>
       </div>
-      <p className="card-description">{description}</p>
+      <p className="card-title">{title}</p>
       <div className="pricing">
         <p>From ${price}</p>
         <p> / person</p>

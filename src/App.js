@@ -1,34 +1,31 @@
 import React from 'react';
-import katieThumb from './Katie-Zaferes.jpeg';
 import './App.css';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Card from './components/Card';
+import cardData from './cardData';
 
 function App() {
+  const data = cardData;
+
+  const cards = data.map((d) => (
+    <Card
+      key={d.id}
+      title={d.title}
+      price={d.price}
+      image={`./images/${d.coverImg}`}
+      starAvg={d.stats.rating}
+      reviewNum={d.stats.reviewCount}
+      location={d.location}
+      overlayText={d.openSpots > 0 ? 'ONLINE' : 'SOLD OUT'}
+    />
+  ));
+
   return (
     <div>
       <Nav />
       <Hero />
-      <Card
-        image={katieThumb}
-        starAvg="5.0"
-        reviewNum={6}
-        country="USA"
-        description="Life lessons with Katie Zaferes"
-        price={136}
-        overlayText="SOLD OUT"
-      />
-
-      <Card
-        image={katieThumb}
-        starAvg="4.7"
-        reviewNum="25"
-        country="Canada"
-        description="Another description"
-        price="77"
-        overlayText="ONLINE"
-      />
+      {cards}
     </div>
   );
 }
