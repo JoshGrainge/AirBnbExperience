@@ -9,8 +9,12 @@ export default function Card({
   location,
   title,
   price,
-  overlayText,
+  openSpots,
 }) {
+  let badgeText;
+  if (openSpots === 0) badgeText = 'SOLD OUT';
+  else if (location === 'Online') badgeText = 'ONLINE';
+
   return (
     <div className="card-container">
       <img className="thumb" src={image} alt="thumbanil" />
@@ -26,9 +30,9 @@ export default function Card({
         <p>From ${price}</p>
         <p> / person</p>
       </div>
-      {overlayText && (
+      {badgeText && (
         <div className="card-overlay">
-          <p>{overlayText}</p>
+          <p>{badgeText}</p>
         </div>
       )}
     </div>

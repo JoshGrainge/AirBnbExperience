@@ -15,7 +15,7 @@ function App() {
       starAvg={d.stats.rating}
       reviewNum={d.stats.reviewCount}
       location={d.location}
-      overlayText={d.openSpots > 0 ? undefined : 'SOLD OUT'}
+      openSpots={d.openSpots}
     />
   ));
 
