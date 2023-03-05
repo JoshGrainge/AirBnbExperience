@@ -26,9 +26,11 @@ export default function Card({
         <p>From ${price}</p>
         <p> / person</p>
       </div>
-      <div className="card-overlay">
-        <p>{overlayText}</p>
-      </div>
+      {overlayText && (
+        <div className="card-overlay">
+          <p>{overlayText}</p>
+        </div>
+      )}
     </div>
   );
 }
